@@ -1,334 +1,583 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>QX 2025 Quarterly Earnings – Interactive Deck</title>
-    <meta
-      name="description"
-      content="Interactive RevealJS presentation for the quarterly earnings report at a major financial institution."
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Core Reveal.js styles -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css"
-    />
-    <!-- Theme (pick any: black, white, league, beige, night, serif, simple, solarized, moon, dracula, sky, blood) -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/theme/white.css"
-      id="theme"
-    />
-
-    <!-- Code syntax highlighting theme -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/highlight/monokai.css"
-    />
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4 2024 Quarterly Earnings Report</title>
+    
+    <!-- RevealJS Core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/league.css">
+    
+    <!-- Code Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
+    
+    <!-- Custom Styles -->
     <style>
-      /* Simple “modern dashboard” look for KPI cards */
-      .kpi-grid {
-        display: grid;
-        gap: 1.5rem;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        margin-top: 1.5rem;
-      }
+        .reveal {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .reveal h1, .reveal h2 {
+            color: #42affa;
+            text-transform: none;
+            line-height: 1.2;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 20px auto;
+        }
+        
+        .email-footer {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            font-size: 0.6em;
+            color: #888;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            margin: 10px;
+            display: inline-block;
+            min-width: 200px;
+        }
+        
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .metric-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .revenue-chart {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        th {
+            background: rgba(66, 175, 250, 0.2);
+        }
 
-      .kpi-card {
-        border-radius: 12px;
-        padding: 1.2rem 1.4rem;
-        background: rgba(0, 0, 0, 0.04);
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-        text-align: left;
-        backdrop-filter: blur(4px);
-      }
-
-      .kpi-card h3 {
-        margin-top: 0;
-        margin-bottom: 0.4rem;
-        font-size: 1.1rem;
-      }
-
-      .kpi-value {
-        font-size: 1.6rem;
-        font-weight: 700;
-      }
-
-      .kpi-caption {
-        margin-top: 0.3rem;
-        font-size: 0.9rem;
-        opacity: 0.8;
-      }
-
-      .reveal .subtitle {
-        font-size: 1.1rem;
-        margin-top: 0.6rem;
-        opacity: 0.8;
-      }
-
-      .reveal .contact {
-        margin-top: 1.4rem;
-        font-size: 0.9rem;
-        opacity: 0.85;
-      }
+        .reveal pre code {
+            max-height: 500px;
+        }
     </style>
-  </head>
-
-  <body>
+</head>
+<body>
     <div class="reveal">
-      <div class="slides">
-        <!-- Title / intro slide -->
-        <section>
-          <h1>Quarterly Earnings Report</h1>
-          <p class="subtitle">Interactive technical overview for stakeholders</p>
+        <div class="slides">
+            
+            <!-- Title Slide -->
+            <section data-background="linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+                <h1>Q4 2024 Quarterly Earnings Report</h1>
+                <h3>Financial Performance & Strategic Insights</h3>
+                <p>Interactive Technical Presentation</p>
+                <br>
+                <p style="font-size: 0.8em;">Presented by: Financial Analytics Team</p>
+                <p style="font-size: 0.7em;">Contact: 23f2001849@ds.study.iitm.ac.in</p>
+                
+                <aside class="notes">
+                    Welcome everyone to our Q4 2024 earnings presentation.
+                    Today we'll cover our financial performance, key metrics,
+                    and strategic initiatives for the upcoming quarter.
+                </aside>
+            </section>
 
-          <p>
-            Technical Consultant – Financial Technology<br />
-            <strong>23f2001849@ds.study.iitm.ac.in</strong>
-          </p>
+            <!-- Executive Summary with Fragments -->
+            <section>
+                <h2>Executive Summary</h2>
+                <div class="fragment fade-in">
+                    <div class="metric-card">
+                        <div class="metric-value">$4.2B</div>
+                        <div class="metric-label">Total Revenue</div>
+                    </div>
+                </div>
+                <div class="fragment fade-in">
+                    <div class="metric-card">
+                        <div class="metric-value">+18%</div>
+                        <div class="metric-label">YoY Growth</div>
+                    </div>
+                </div>
+                <div class="fragment fade-in">
+                    <div class="metric-card">
+                        <div class="metric-value">$892M</div>
+                        <div class="metric-label">Net Profit</div>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    Our Q4 results exceeded expectations across all key metrics.
+                    Revenue hit $4.2 billion, representing 18% year-over-year growth.
+                    Net profit margins improved to 21.2%.
+                </aside>
+                
+                <div class="email-footer">23f2001849@ds.study.iitm.ac.in</div>
+            </section>
 
-          <aside class="notes">
-            Welcome everyone and set the context: this deck is built with
-            Reveal.js to demonstrate modern, interactive presentation
-            capabilities. Mention that we’ll walk through financial performance,
-            key technical metrics supporting those numbers, and how data flows
-            into our earnings dashboards.
-          </aside>
-        </section>
+            <!-- Markdown Slide -->
+            <section data-markdown>
+                <textarea data-template>
+                    ## Key Achievements Q4 2024
+                    
+                    ### Product Launches
+                    * **Digital Banking Platform** - 2.5M new users
+                    * **AI-Powered Risk Assessment** - 40% faster processing
+                    * **Mobile Payment Integration** - 85% adoption rate
+                    
+                    ### Market Expansion
+                    * Entered 3 new markets in Southeast Asia
+                    * Established partnerships with 15 regional banks
+                    * Increased market share by 3.2%
+                    
+                    ### Operational Excellence
+                    * Cost reduction of 12% through automation
+                    * Customer satisfaction score: 4.7/5.0
+                    * Employee retention rate: 94%
+                    
+                    ---
+                    
+                    ## Revenue Breakdown by Segment
+                    
+                    | Segment | Q4 2024 | Q4 2023 | Growth |
+                    |---------|---------|---------|--------|
+                    | Retail Banking | $1.8B | $1.5B | +20% |
+                    | Corporate Banking | $1.2B | $1.0B | +20% |
+                    | Investment Services | $0.8B | $0.7B | +14% |
+                    | Digital Products | $0.4B | $0.2B | +100% |
+                </textarea>
+            </section>
 
-        <!-- Agenda with fragments -->
-        <section>
-          <h2>Agenda</h2>
-          <ul>
-            <li class="fragment">Headline financial performance</li>
-            <li class="fragment">Key ratios &amp; capital metrics</li>
-            <li class="fragment">Technology &amp; risk KPIs</li>
-            <li class="fragment">Data pipeline &amp; architecture view</li>
-            <li class="fragment">Q&amp;A</li>
-          </ul>
+            <!-- Financial Formulas with MathJax -->
+            <section>
+                <h2>Financial Metrics & Calculations</h2>
+                
+                <div class="fragment">
+                    <h3>Return on Equity (ROE)</h3>
+                    <p>$$ROE = \frac{Net\ Income}{Shareholder's\ Equity} = \frac{892M}{4,200M} = 21.2\%$$</p>
+                </div>
+                
+                <div class="fragment">
+                    <h3>Earnings Per Share (EPS)</h3>
+                    <p>$$EPS = \frac{Net\ Income - Preferred\ Dividends}{Weighted\ Average\ Shares} = \frac{892M - 50M}{420M} = \$2.00$$</p>
+                </div>
+                
+                <div class="fragment">
+                    <h3>Compound Annual Growth Rate</h3>
+                    <p>$$CAGR = \left(\frac{V_f}{V_i}\right)^{\frac{1}{n}} - 1 = \left(\frac{4.2B}{2.8B}\right)^{\frac{1}{3}} - 1 = 14.47\%$$</p>
+                </div>
+                
+                <aside class="notes">
+                    Our financial metrics show strong performance across the board.
+                    ROE of 21.2% significantly exceeds industry average of 15%.
+                    EPS growth demonstrates value creation for shareholders.
+                </aside>
+                
+                <div class="email-footer">23f2001849@ds.study.iitm.ac.in</div>
+            </section>
 
-          <aside class="notes">
-            Reveal each bullet as you speak. Briefly explain what stakeholders
-            should expect in each section. Emphasize that we will tie the
-            technical metrics back to financial outcomes.
-          </aside>
-        </section>
+            <!-- Code Analysis Section -->
+            <section>
+                <h2>Revenue Forecasting Model</h2>
+                <p>Our predictive analytics using Python</p>
+                
+                <pre><code class="python" data-line-numbers="1-3|5-9|11-15|17-20">
+import pandas as pd
+import numpy as np
+from sklearn.linear_model import LinearRegression
 
-        <!-- MARKDOWN SLIDE (at least one) -->
-        <section data-markdown>
-          <textarea data-template>
-## Revenue & Profit Highlights *(Markdown slide)*
+# Load historical revenue data
+revenue_data = pd.DataFrame({
+    'quarter': range(1, 13),
+    'revenue': [3.2, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.0, 4.1, 4.1, 4.2]
+})
 
-- **Total revenue**: \$X.XB *(+12% YoY)*
-- **Net income**: \$Y.YB *(+8% YoY)*
-- **Basic EPS**: `₹ 34.21` per share
-- **Cost-to-income ratio**: 47.2%
+# Prepare features and target
+X = revenue_data[['quarter']].values
+y = revenue_data['revenue'].values
+model = LinearRegression()
+model.fit(X, y)
 
-**Drivers**
+# Forecast next 4 quarters
+future_quarters = np.array([[13], [14], [15], [16]])
+predictions = model.predict(future_quarters)
+print(f"Q1 2025 Forecast: ${predictions[0]:.2f}B")
+print(f"Annual 2025 Projection: ${sum(predictions):.2f}B")
+                </code></pre>
+                
+                <aside class="notes">
+                    This Python model shows our revenue forecasting approach.
+                    We use linear regression with historical data to project future quarters.
+                    The model predicts continued growth trajectory for 2025.
+                </aside>
+                
+                <div class="email-footer">23f2001849@ds.study.iitm.ac.in</div>
+            </section>
 
-- Strong growth in **digital payments** and **wealth management**
-- Improved **net interest margin (NIM)** from rate environment
-- Continued optimization of **operational expenditure** via automation
-
-> Replace `X.XB`, `Y.YB`, and exact ratios with the actual reported figures before presenting.
-          </textarea>
-        </section>
-
-        <!-- Math slide: financial formula -->
-        <section>
-          <h2>Evaluating Long-Term Initiatives – NPV</h2>
-
-          <p>We assess major technology &amp; product investments using NPV:</p>
-
-          <p>
-            \[
-              \text{NPV} = \sum_{t=1}^{T} \frac{CF_t}{(1 + r)^t} - C_0
-            \]
-          </p>
-
-          <p class="fragment">
-            Return on Equity (ROE) is also tracked quarterly:
-            \[
-              \text{ROE} = \frac{\text{Net Income}}{\text{Average Shareholders' Equity}}
-            \]
-          </p>
-
-          <ul>
-            <li class="fragment">
-              \( CF_t \): projected cash flow in period \( t \)
-            </li>
-            <li class="fragment">
-              \( r \): discount rate (cost of capital / hurdle rate)
-            </li>
-            <li class="fragment">
-              \( C_0 \): initial investment in the initiative
-            </li>
-          </ul>
-
-          <aside class="notes">
-            Explain how you use NPV and ROE to evaluate strategic technology
-            investments (e.g., new digital channels or risk engines). You can
-            plug in a simple example: “For a project costing ₹100 crore upfront
-            with annual benefits of ₹30 crore over 5 years at 10% discount
-            rate…”.
-          </aside>
-        </section>
-
-        <!-- Code sample + syntax highlighting -->
-        <section>
-          <h2>Interactive Earnings Dashboard – API Sample</h2>
-          <p>
-            Data for the internal earnings dashboard is exposed over a secured
-            API:
-          </p>
-
-          <pre>
-<code class="language-javascript" data-trim>
-async function fetchQuarterlyEarnings(quarter) {
-  const response = await fetch(
-    `https://api.examplebank.com/earnings?quarter=${quarter}`,
-    {
-      headers: {
-        Authorization: `Bearer &lt;ACCESS_TOKEN&gt;`,
-        "X-Client-Id": "earnings-analytics-ui"
-      }
+            <!-- Risk Analysis with Animated List -->
+            <section>
+                <h2>Risk Analysis Dashboard</h2>
+                
+                <pre><code class="javascript" data-line-numbers>
+// Real-time risk monitoring system
+class RiskAnalyzer {
+    constructor() {
+        this.riskThreshold = 0.75;
+        this.alerts = [];
     }
-  );
-
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-  }
-
-  const data = await response.json();
-
-  // Aggregate by business unit for visualization
-  return data.businessUnits.map(unit => ({
-    name: unit.name,
-    revenue: unit.revenue,
-    netIncome: unit.netIncome,
-    roe: unit.roe
-  }));
+    
+    analyzeTransaction(transaction) {
+        const riskScore = this.calculateRiskScore(transaction);
+        
+        if (riskScore > this.riskThreshold) {
+            this.alerts.push({
+                id: transaction.id,
+                score: riskScore,
+                timestamp: new Date(),
+                action: 'FLAG_FOR_REVIEW'
+            });
+        }
+        
+        return {
+            approved: riskScore <= this.riskThreshold,
+            score: riskScore,
+            details: this.getRiskFactors(transaction)
+        };
+    }
+    
+    calculateRiskScore(transaction) {
+        // ML-based scoring algorithm
+        const factors = {
+            amount: transaction.amount > 10000 ? 0.3 : 0,
+            location: this.isHighRiskCountry(transaction.country) ? 0.4 : 0,
+            frequency: this.checkVelocity(transaction.userId) ? 0.3 : 0
+        };
+        
+        return Object.values(factors).reduce((a, b) => a + b, 0);
+    }
 }
-</code>
-          </pre>
+                </code></pre>
+                
+                <div class="email-footer">23f2001849@ds.study.iitm.ac.in</div>
+            </section>
 
-          <aside class="notes">
-            Clarify that this is illustrative pseudo-code, not a production
-            endpoint. Use it to show that the earnings dashboard is API-driven,
-            making it easy to build interactive internal tools and self-service
-            analytics.
-          </aside>
-        </section>
+            <!-- Interactive Data Visualization -->
+            <section>
+                <h2>Quarterly Performance Trends</h2>
+                
+                <div class="revenue-chart">
+                    <canvas id="revenueChart" width="800" height="400"></canvas>
+                </div>
+                
+                <div class="fragment fade-up">
+                    <p style="color: #42affa;">📈 Consistent upward trajectory across all segments</p>
+                </div>
+                
+                <aside class="notes">
+                    This chart shows our quarterly performance over the past year.
+                    Notice the strong growth in Q4, particularly in digital products.
+                    This validates our strategic focus on digital transformation.
+                </aside>
+                
+                <div class="email-footer">23f2001849@ds.study.iitm.ac.in</div>
+            </section>
 
-        <!-- Tech / risk KPI slide with fragments -->
-        <section>
-          <h2>Technology &amp; Risk KPIs (Supporting the Numbers)</h2>
+            <!-- Strategic Initiatives with Fragments -->
+            <section>
+                <h2>2025 Strategic Initiatives</h2>
+                
+                <div style="text-align: left;">
+                    <div class="fragment fade-in-then-semi-out">
+                        <h3>1. Digital Transformation</h3>
+                        <ul>
+                            <li>Cloud migration completion by Q2</li>
+                            <li>AI integration across all products</li>
+                            <li>Blockchain for cross-border payments</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fragment fade-in-then-semi-out">
+                        <h3>2. Market Expansion</h3>
+                        <ul>
+                            <li>Enter 5 new emerging markets</li>
+                            <li>Launch digital-only banking in Europe</li>
+                            <li>Strategic acquisitions budget: $500M</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fragment fade-in">
+                        <h3>3. Sustainability Goals</h3>
+                        <ul>
+                            <li>Carbon neutral operations by 2026</li>
+                            <li>Green financing portfolio: $2B</li>
+                            <li>ESG score improvement target: A+</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="email-footer">23f2001849@ds.study.iitm.ac.in</div>
+            </section>
 
-          <div class="kpi-grid">
-            <div class="kpi-card fragment">
-              <h3>API Latency (p95)</h3>
-              <p><span class="kpi-value">120 ms</span></p>
-              <p class="kpi-caption">↓ 15% vs last quarter</p>
-            </div>
+            <!-- Financial Projections with Math -->
+            <section>
+                <h2>2025 Financial Projections</h2>
+                
+                <div class="fragment">
+                    <h3>Revenue Growth Model</h3>
+                    <p>$$Revenue_{2025} = Revenue_{2024} \times (1 + g)^n$$</p>
+                    <p>Where: g = 0.15 (growth rate), n = 1</p>
+                    <p>$$Revenue_{2025} = 4.2B \times 1.15 = \$4.83B$$</p>
+                </div>
+                
+                <div class="fragment">
+                    <h3>Net Present Value of Investments</h3>
+                    <p>$$NPV = \sum_{t=1}^{n} \frac{CF_t}{(1+r)^t} - Initial\ Investment$$</p>
+                    <p>$$NPV = \frac{500M}{1.08} + \frac{600M}{1.08^2} + \frac{700M}{1.08^3} - 1.2B = \$355M$$</p>
+                </div>
+                
+                <aside class="notes">
+                    Our financial models project strong returns on strategic investments.
+                    Conservative growth estimates of 15% annually.
+                    NPV analysis shows positive value creation across all initiatives.
+                </aside>
+                
+                <div class="email-footer">23f2001849@ds.study.iitm.ac.in</div>
+            </section>
 
-            <div class="kpi-card fragment">
-              <h3>Failed Transactions</h3>
-              <p><span class="kpi-value">0.12%</span></p>
-              <p class="kpi-caption">Within reliability SLO</p>
-            </div>
+            <!-- SQL Query Example -->
+            <section>
+                <h2>Data Analytics Infrastructure</h2>
+                
+                <pre><code class="sql" data-line-numbers="1-5|7-15|17-20">
+-- Revenue analysis query for Q4 2024
+SELECT 
+    segment,
+    SUM(revenue) as total_revenue,
+    COUNT(DISTINCT customer_id) as unique_customers,
+    AVG(transaction_value) as avg_transaction
+FROM 
+    financial_transactions
+WHERE 
+    transaction_date BETWEEN '2024-10-01' AND '2024-12-31'
+    AND status = 'completed'
+GROUP BY 
+    segment
+HAVING 
+    SUM(revenue) > 100000000
+ORDER BY 
+    total_revenue DESC;
 
-            <div class="kpi-card fragment">
-              <h3>Fraud Detection Precision</h3>
-              <p><span class="kpi-value">99.3%</span></p>
-              <p class="kpi-caption">Model performance on live traffic</p>
-            </div>
+-- Customer retention analysis
+WITH monthly_cohorts AS (
+    SELECT 
+        DATE_TRUNC('month', first_transaction) as cohort_month,
+        customer_id,
+        COUNT(DISTINCT DATE_TRUNC('month', transaction_date)) as active_months
+    FROM customer_transactions
+    GROUP BY 1, 2
+)
+SELECT 
+    cohort_month,
+    COUNT(customer_id) as total_customers,
+    AVG(active_months) as avg_retention_months,
+    COUNT(CASE WHEN active_months >= 12 THEN 1 END)::FLOAT / COUNT(*) as retention_rate
+FROM monthly_cohorts
+GROUP BY cohort_month
+ORDER BY cohort_month DESC;
+                </code></pre>
+                
+                <div class="email-footer">23f2001849@ds.study.iitm.ac.in</div>
+            </section>
 
-            <div class="kpi-card fragment">
-              <h3>Regulatory Reporting</h3>
-              <p><span class="kpi-value">100%</span></p>
-              <p class="kpi-caption">On-time submissions this quarter</p>
-            </div>
-          </div>
-
-          <aside class="notes">
-            Use this slide to link operational excellence to financial outcomes:
-            fewer failed transactions and low latency drive higher digital
-            volumes and fee income, while strong fraud detection and timely
-            regulatory reporting protect capital and reputation.
-          </aside>
-        </section>
-
-        <!-- Data flow / architecture (high level) -->
-        <section>
-          <h2>Data Flow for Earnings Reporting</h2>
-
-          <ul>
-            <li class="fragment">
-              Core banking &amp; trading systems stream data into the
-              enterprise data lake.
-            </li>
-            <li class="fragment">
-              ETL/ELT pipelines standardize ledger, risk, and product data.
-            </li>
-            <li class="fragment">
-              Aggregations feed the **earnings marts** used by Finance.
-            </li>
-            <li class="fragment">
-              Dashboards &amp; APIs expose curated metrics for stakeholders.
-            </li>
-          </ul>
-
-          <aside class="notes">
-            Describe your actual stack here (e.g. Kafka, Spark, Snowflake, etc.)
-            and highlight controls: data quality checks, reconciliations to the
-            GL, and sign-offs from Finance before publishing numbers.
-          </aside>
-        </section>
-
-        <!-- Closing / contact slide -->
-        <section>
-          <h2>Next Steps &amp; Contact</h2>
-
-          <ul>
-            <li class="fragment">Align on capital allocation for Q+1 initiatives</li>
-            <li class="fragment">
-              Prioritize technology investments by NPV and risk-adjusted return
-            </li>
-            <li class="fragment">
-              Extend interactive dashboards to additional stakeholder groups
-            </li>
-          </ul>
-
-          <p class="fragment contact">
-            For follow-ups or detailed technical discussions:<br />
-            <strong>23f2001849@ds.study.iitm.ac.in</strong>
-          </p>
-
-          <aside class="notes">
-            Invite questions and follow-ups. Mention that technical deep-dives
-            (architecture diagrams, pipeline details, model monitoring) can be
-            shared in separate sessions if needed.
-          </aside>
-        </section>
-      </div>
+            <!-- Closing Slide -->
+            <section data-background="linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+                <h1>Thank You</h1>
+                <h3>Q&A Session</h3>
+                
+                <div style="margin-top: 50px;">
+                    <p>📧 Contact: 23f2001849@ds.study.iitm.ac.in</p>
+                    <p>🔗 Full Report: github.com/yourusername/q4-earnings-2024</p>
+                    <p>📊 Interactive Dashboard: analytics.company.com</p>
+                </div>
+                
+                <div style="margin-top: 50px;" class="fragment fade-up">
+                    <p style="font-size: 0.8em;">Press <strong>ESC</strong> for overview | <strong>S</strong> for speaker notes | <strong>?</strong> for help</p>
+                </div>
+                
+                <aside class="notes">
+                    Thank you for attending our earnings presentation.
+                    We're now open for questions.
+                    Please feel free to reach out via email for detailed discussions.
+                    Our investor relations team is available for follow-up meetings.
+                </aside>
+            </section>
+            
+        </div>
     </div>
 
-    <!-- Reveal.js core & plugins -->
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/markdown/markdown.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/highlight/highlight.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/notes/notes.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/math/math.js"></script>
-
+    <!-- RevealJS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
+    
+    <!-- Chart.js for visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
     <script>
-      Reveal.initialize({
-        hash: true, // allow linking directly to specific slides
-        slideNumber: "c/t", // show current/total
-        transition: "slide",
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
-      });
+        // Initialize RevealJS
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: true,
+            transition: 'slide',
+            
+            // Parallax background
+            parallaxBackgroundImage: '',
+            parallaxBackgroundSize: '',
+            parallaxBackgroundHorizontal: null,
+            parallaxBackgroundVertical: null,
+            
+            // Plugins
+            plugins: [ 
+                RevealMarkdown, 
+                RevealHighlight, 
+                RevealNotes,
+                RevealMath.MathJax3
+            ],
+            
+            // Math configuration
+            mathjax3: {
+                mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+                config: 'TeX-AMS_HTML-full',
+                options: {
+                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+                }
+            }
+        });
+        
+        // Create revenue chart when slide is shown
+        Reveal.on('slidechanged', event => {
+            if (event.currentSlide.querySelector('#revenueChart')) {
+                const ctx = document.getElementById('revenueChart').getContext('2d');
+                
+                // Check if chart already exists
+                if (!window.revenueChartInstance) {
+                    window.revenueChartInstance = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: ['Q1 2024', 'Q2 2024', 'Q3 2024', 'Q4 2024'],
+                            datasets: [{
+                                label: 'Total Revenue ($B)',
+                                data: [3.6, 3.8, 4.0, 4.2],
+                                borderColor: '#42affa',
+                                backgroundColor: 'rgba(66, 175, 250, 0.1)',
+                                tension: 0.4,
+                                fill: true
+                            }, {
+                                label: 'Net Profit ($M)',
+                                data: [720, 760, 840, 892],
+                                borderColor: '#764ba2',
+                                backgroundColor: 'rgba(118, 75, 162, 0.1)',
+                                tension: 0.4,
+                                fill: true,
+                                yAxisID: 'y1'
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            interaction: {
+                                mode: 'index',
+                                intersect: false,
+                            },
+                            plugins: {
+                                legend: {
+                                    labels: {
+                                        color: '#ccc'
+                                    }
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            let label = context.dataset.label || '';
+                                            if (label) {
+                                                label += ': ';
+                                            }
+                                            if (context.parsed.y !== null) {
+                                                label += context.datasetIndex === 0 ? 
+                                                    '$' + context.parsed.y + 'B' : 
+                                                    '$' + context.parsed.y + 'M';
+                                            }
+                                            return label;
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    type: 'linear',
+                                    display: true,
+                                    position: 'left',
+                                    grid: {
+                                        color: 'rgba(255, 255, 255, 0.1)'
+                                    },
+                                    ticks: {
+                                        color: '#ccc',
+                                        callback: function(value) {
+                                            return '$' + value + 'B';
+                                        }
+                                    }
+                                },
+                                y1: {
+                                    type: 'linear',
+                                    display: true,
+                                    position: 'right',
+                                    grid: {
+                                        drawOnChartArea: false,
+                                    },
+                                    ticks: {
+                                        color: '#ccc',
+                                        callback: function(value) {
+                                            return '$' + value + 'M';
+                                        }
+                                    }
+                                },
+                                x: {
+                                    grid: {
+                                        color: 'rgba(255, 255, 255, 0.1)'
+                                    },
+                                    ticks: {
+                                        color: '#ccc'
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        });
     </script>
-  </body>
+</body>
 </html>
